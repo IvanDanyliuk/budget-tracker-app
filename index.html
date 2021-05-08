@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Budget App</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header>
+        <div class="greeting">
+            <div class="greeting__image">
+                <i id="greeting__image" class="fas"></i>
+            </div>
+            <div class="greeting__message">
+                <div class="greeting__message_title" id="header-greeting">Good morning!</div>
+                <div class="greeting__message_date" id="header-date"></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="main-section">
+            <div class="main-section__heading">
+                <div class="main-section__output-data">
+                    <h2>Incomes: <span id="total-income"></span></h2>
+                    <div id="total-income"></div>
+                </div>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <div class="main-section__panel">
+                <form class="main-section__form">
+                    <fieldset class="form-input-text">
+                        <div class="error-message"></div>
+                        <input type="text" class="section-input" id="income-name" placeholder="Income item title...">
+                    </fieldset>
+                    <fieldset class="form-input-sum">
+                        <div class="error-message"></div>
+                        <input type="text" class="section-input" id="income-sum" placeholder="Income item amount...">
+                    </fieldset>
+                    <button class="add-btn" id="add-income" data-dbbranch="incomes">Add</button>
+                </form>
+                <ul class="main-section__panel_items" id="incomes-container"></ul>
+            </div>
+        </section>
+
+        <section class="main-section">
+            <div class="main-section__heading">
+                <div class="main-section__output-data">
+                    <h2>Expenses: <span id="total-expenses"></span></h2>
+                    <div id="total-expenses"></div>
+                </div>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <div class="main-section__panel">
+                <form class="main-section__form">
+                    <fieldset class="form-input-text">
+                        <div class="error-message"></div>
+                        <input type="text" class="section-input" id="expense-name" placeholder="Expense item title...">
+                    </fieldset>
+                    <fieldset class="form-input-sum">
+                        <div class="error-message"></div>
+                        <input type="text" class="section-input" id="expense-sum" placeholder="Expense item amount...">
+                    </fieldset>
+                    <select class="form-input-category" id="expense-category">
+                        <option value="home">Home</option>
+                        <option value="transport">Transport</option>
+                        <option value="food">Food</option>
+                        <option value="sport">Sport</option>
+                        <option value="rest">Rest</option>
+                        <option value="health">Health</option>
+                        <option value="clothes">Clothes</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button class="add-btn" id="add-expense" data-dbbranch="expenses">Add</button>
+                </form>
+                <ul class="main-section__panel_items" id="expenses-container"></ul>
+            </div>
+        </section>
+
+        <section class="main-section">
+            <div class="main-section__dashboard">
+                <div class="main-section__budget">Your balance: <span id="final-budget-value"></span></div>
+            </div>
+            <div class="main-section__report">
+                <div class="main-section__repost-header">
+                    <h3>Your expenses report</h3>
+                    <button class="add-btn" id="sort-data">Sort <i class="fas fa-sort-amount-down"></i></button>
+                </div>
+                <ul class="main-section__report_body" id="report-body"></ul>
+            </div>
+        </section>
+
+        <section class="main-section">
+            <div class="main-section__heading">
+                <h2>Currency Exchange</h2>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <div class="main-section__panel">
+                <form class="main-section__form">
+                    <fieldset class="form-currency-input">
+                        <div class="error-message"></div>
+                        <input type="text" class="form-input-currency" id="currency-sum" placeholder="Enter your amount..." data-type="amount">
+                    </fieldset>
+                    <fieldset class="form-select-currency">
+                        <select id="from-currency">
+                            <option value="usd">USD</option>
+                            <option value="eur">EUR</option>
+                            <option value="uah">UAH</option>
+                            <option value="gbp">GBP</option>
+                        </select>
+                        <select id="to-currency">
+                            <option value="uah">UAH</option>
+                            <option value="eur">EUR</option>
+                            <option value="usd">USD</option>
+                            <option value="gbp">GBP</option>
+                        </select>
+                    </fieldset>
+                    <button class="add-btn" id="convert">Convert</button>
+                </form>
+                <div id="currency-result">
+                    Enter your amount and click "Convert"!
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer__title">Ivan Danyliuk. JSCore. 2021</div>
+        <div>
+            <a href="https://github.com/IvanDanyliuk/js-core/tree/main/project" target="_blank">
+                <span>See the code</span>
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="./js/ui-effects.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
