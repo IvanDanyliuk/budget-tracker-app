@@ -16,7 +16,7 @@ const isValidData = (sum, title = null, from = null, to = null) => {
 
     if(title !== null) {
         title.previousElementSibling.innerHTML = "";
-        if(title.value === "") {
+        if(title.value === "" || !/\S/.test(title.value)) {
             title.previousElementSibling.innerHTML = "<i class='fas fa-exclamation-circle'></i> Must not be empty";
             isTitleValid = false;
         }
