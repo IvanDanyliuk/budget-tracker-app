@@ -297,7 +297,6 @@ const convertCurrency = () => {
     let resultContainer = document.querySelector("#currency-result");
 
     let isValid = isValidData(currencySum, null, fromCurrency, toCurrency);
-    console.log(isValid);
     
     if(fromCurrency.value !== toCurrency.value && isValid) {
         fetch(`https://fcsapi.com/api-v3/forex/latest?symbol=${fromCurrency.value}/${toCurrency.value}&access_key=dHHeQmYDhbEYF2jHfrgE`, {method: 'GET'})
