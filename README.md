@@ -1,4 +1,4 @@
-#Budget Tracker App
+# Budget Tracker App
 Simple app for the tracking of the personal finance.
 
 Implemented with:
